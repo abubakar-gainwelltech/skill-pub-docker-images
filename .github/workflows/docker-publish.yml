@@ -20,12 +20,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker Image
-        run: |
-          docker buildx build \
-            --platform linux/amd64,linux/arm64 \
-            --tag ghcr.io/abubakar-gainwelltech/skill-pub-docker-images/stackoverflown:main \
-            --push .
+      # - name: Build and push Docker Image
+      #   run: |
+      #     docker build . --tag ghcr.io/abubakar-gainwelltech/skill-pub-docker-images/stackoverflown:main
+      #     docker push ghcr.io/abubakar-gainwelltech/skill-pub-docker-images/stackoverflown:main
+
       
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
